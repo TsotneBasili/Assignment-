@@ -1,0 +1,11 @@
+# Python function that calculates and returns the factorial of an input integer.
+
+def factorial(number):
+    result = 1
+    for numb in range(int(number)+1):
+        if numb != 0:
+            result *= numb
+    return f"The factorial of this number is {result}"
+
+number = input("please provide a number: ")
+print(factorial(number))
