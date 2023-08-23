@@ -1,0 +1,110 @@
+# a. Python function that calculates and returns the factorial of an input integer.
+
+def factorial(number):
+    result = 1
+    for numb in range(int(number)+1):
+        if numb != 0:
+            result *= numb
+    return f"The factorial of this number is {result}"
+
+number = input("please provide a number: ")
+print(factorial(number))
+
+
+# -----------------------------------------
+
+
+# b. Python function that calculates and returns both the largest and smallest numbers in the list.
+
+def largest_smallest(list):
+    new_list = [min(list), max(list)]
+    return new_list
+
+
+list1 = [1, 9, 7, 16]
+
+print(largest_smallest(list1))
+
+
+# --------------------------------------
+
+# c. Python function that generates a random password of a specified length using Python.
+
+import random
+import string
+
+
+def generate_pass():
+    characters = string.ascii_letters + string.digits
+    password = "".join(random.choice(characters) for i in range(10))
+    return password
+
+
+print(generate_pass())
+
+# -------------------------------------------------------------
+
+
+# d. Define what a lambda function is and provide an example of its usage.
+
+# Lambda function is an one line function, it is anonymouse and has no name. it is used when you want to create a function quickly and use it on place, 
+# because as it has no name, you want be able to reuse that function anywhere else.
+
+add_numbers = lambda x, y: x + y
+print(add_numbers(5, 7))
+
+
+# ---------------------------------------------------------------
+
+
+# a. Python function that calculates the greatest common divisor (GCD) of two numbers.
+
+
+def greatest_common_divisor(first_numb, second_numb):
+    first_numb_divisors = []
+    second_numb_divisors = []
+    common_divisors = []
+
+    for numb in range(1, first_numb+1):
+        if first_numb % numb == 0:
+            first_numb_divisors.append(numb)
+
+    for numb in range(1, second_numb+1):
+        if second_numb % numb == 0:
+            second_numb_divisors.append(numb)  
+
+    for numb in first_numb_divisors:
+        if numb in second_numb_divisors:
+            common_divisors.append(numb)
+
+    return max(common_divisors)
+
+
+numb1 = 20
+numb2 = 16
+
+print(greatest_common_divisor(numb1, numb2))
+
+
+#---------------------------------------------------
+
+
+# b. Python function that generates the Fibonacci sequence.
+
+
+def fibonacci(n):
+    list = []
+    for number in range(n):
+        if number <= 0:
+            list.append(0)
+        elif number == 1:
+            list.append(1)
+        else:
+            list.append(list[number - 1] + list[number - 2])
+    return list
+    
+    
+print(fibonacci(7))
+
+
+# ---------------------------------------------------------------------
